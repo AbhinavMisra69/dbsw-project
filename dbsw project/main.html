@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="stylemain.css" />
+    <title>Calendar with Events</title>
+  </head>
+  <body>
+
+    
+    <nav class="navbar">
+        
+      <div class="navbar-menu" id="navbarMenu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+        <div class="search">
+          <i class='bx bx-search'></i>
+          <input type="text" class="hide" placeholder="Quick Search ...">
+        </div>
+      </div>
+      <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  
+
+  
+    <section class="wrapper">
+      <i class="fa-solid fa-arrow-left button" id="prev"></i>
+      <div class="image-container">
+        <div class="carousel">
+          <img src="event.jpg" alt="" />
+          <img src="illu.jpg" alt="" />
+          <img src="netflixbg.jpg" alt="" />
+          <img src="concert.jpeg" alt="" />
+        </div>
+        <i class="fa-solid fa-arrow-right button" id="next"></i>
+      </div>
+    </section>
+    
+    <div class="recentevents">
+      <h3>Upcoming Events</h3>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id = "card-grid1" style="margin-left: 150px; margin-right: 50px; margin-bottom: 50px; margin-top: 50px; ">
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="currentevents">
+      <h3>current events</h3>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-3 g-4" id = "card-grid1" style="margin-left: 150px; margin-right: 50px; margin-bottom: 50px; margin-top: 50px; ">
+      <div class="col">
+        <div class="card h-100 ">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/041.webp" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/042.webp" class="card-img-top" alt="Palm Springs Road"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a short card.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/043.webp" class="card-img-top" alt="Los Angeles Skyscrapers"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card h-100">
+          <img src="https://mdbcdn.b-cdn.net/img/new/standard/city/044.webp" class="card-img-top" alt="Skyscrapers"/>
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">
+              This is a longer card with supporting text below as a natural lead-in to
+              additional content. This content is a little bit longer.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+
+    <aside>
+        <div class="sidebar-top">
+          <span class="shrink-btn">
+            <i class='bx bx-chevron-left'></i>
+          </span>
+          <img src="./img/logo.png" class="logo" alt="">
+          <h3 class="hide">EVENTORIOUM</h3>
+        </div>
+        
+       
+    
+        <div class="sidebar-links">
+          <ul>
+            <div class="active-tab"></div>
+            <li class="tooltip-element" data-tooltip="0">
+              <a href="#" class="active" data-active="0">
+                <div class="icon">
+                  <i class='bx bx-tachometer'></i>
+                  <i class='bx bxs-tachometer'></i>
+                </div>
+                <span class="link hide">Dashboard</span>
+              </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="1">
+              <a href="#" data-active="1">
+                <div class="icon">
+                  <i class='bx bx-folder'></i>
+                  <i class='bx bxs-folder'></i>
+                </div>
+                <span class="link hide">Projects</span>
+              </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="2">
+              <a href="#" data-active="2">
+                <div class="icon">
+                  <i class='bx bx-message-square-detail'></i>
+                  <i class='bx bxs-message-square-detail'></i>
+                </div>
+                <span class="link hide">Messages</span>
+              </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="3">
+              <a href="#" data-active="3">
+                <div class="icon">
+                  <i class='bx bx-bar-chart-square'></i>
+                  <i class='bx bxs-bar-chart-square'></i>
+                </div>
+                <span class="link hide">Analytics</span>
+              </a>
+            </li>
+            <div class="tooltip">
+              <span class="show">Dashboard</span>
+              <span>Projects</span>
+              <span>Messages</span>
+              <span>Analytics</span>
+            </div>
+          </ul>
+    
+          
+    
+        <div class="sidebar-footer">
+          <a href="#" class="account tooltip-element" data-tooltip="0">
+            <i class='bx bx-user'></i>
+          </a>
+          <div class="admin-user tooltip-element" data-tooltip="1">
+            <div class="admin-profile hide">
+              <img src="./img/face-1.png" alt="">
+              <div class="admin-info">
+                <h3>John Doe</h3>
+                <h5>Admin</h5>
+              </div>
+            </div>
+            <a href="#" class="log-out">
+              <i class='bx bx-log-out'></i>
+            </a>
+          </div>
+          <div class="tooltip">
+            <span class="show">John Doe</span>
+            <span>Logout</span>
+          </div>
+        </div>
+      </aside>
+
+      
+      
+    
+    
+    <div class="container">
+      <div class="left">
+        <div class="calendar">
+          <div class="month">
+            <i class="fas fa-angle-left prev"></i>
+            <div class="date">december 2015</div>
+            <i class="fas fa-angle-right next"></i>
+          </div>
+          <div class="weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+          </div>
+          <div class="days"></div>
+          <div class="goto-today">
+            <div class="goto">
+              <input type="text" placeholder="mm/yyyy" class="date-input" />
+              <button class="goto-btn">Go</button>
+            </div>
+            <button class="today-btn">Today</button>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <div class="today-date">
+          <div class="event-day">wed</div>
+          <div class="event-date">12th december 2022</div>
+        </div>
+        <div class="events"></div>
+        <div class="add-event-wrapper">
+          <div class="add-event-header">
+            <div class="title">Add Event</div>
+            <i class="fas fa-times close"></i>
+          </div>
+          <div class="add-event-body">
+            <div class="add-event-input">
+              <input type="text" placeholder="Event Name" class="event-name" />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Event Time From"
+                class="event-time-from"
+              />
+            </div>
+            <div class="add-event-input">
+              <input
+                type="text"
+                placeholder="Event Time To"
+                class="event-time-to"
+              />
+            </div>
+          </div>
+          <div class="add-event-footer">
+            <button class="add-event-btn">Add Event</button>
+          </div>
+        </div>
+      </div>
+      <button class="add-event">
+        <i class="fas fa-plus"></i>
+      </button>
+    </div>
+
+   
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
