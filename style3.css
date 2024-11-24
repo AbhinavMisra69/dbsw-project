@@ -10,6 +10,16 @@
     background-color: #181414;
   }
 
+  @import 'https://fonts.googleapis.com/css?family=Dosis|Roboto:300,400';
+
+
+  :root {
+    --main-color: #18191e;
+    --main-color-dark: #010101;
+    --main-color-light: #cd2828;
+    --text-color: #cfcde7;
+    --gradient: linear-gradient(to left top, #DD2476 10%, #FF512F 90%) !important;
+  }
 
   * {
     
@@ -172,8 +182,9 @@
   }
   
   .form-container h2 {
+    
     text-align: center;
-    color: #333;
+    color: #c72727;
   }
   
   form label {
@@ -390,7 +401,7 @@
   .active-tab {
     width: 100%;
     height: 53px;
-    background-color: var(--main-color-dark);
+    background-color: black;
     border-radius: 10px;
     position: absolute;
     top: 2.5px;
@@ -605,7 +616,7 @@
     transition: all 0.3s ease;
  }
  
- .icon {
+ .icon1 {
     margin: 0 auto;
     width: 100%;
     height: 80px;
@@ -665,12 +676,12 @@
     max-height:40px;
  }
  
- .card:hover .icon {
+ .card:hover .icon1 {
     background-position: -120px;
     transition: all 0.3s ease;
  }
  
- .card:hover .icon i {
+ .card:hover .icon1 i {
     background: linear-gradient(90deg, #FF7E7E, #FF4848);
     -webkit-background-clip: text;
      -webkit-text-fill-color: transparent;
@@ -787,3 +798,41 @@
       box-shadow: 0 0 20px rgba(0, 255, 0, 1);
     }
   }
+
+#userevents{
+    display: none;
+}
+#delete-back-button{
+    background: var(--gradient)  ;
+    margin-left: 50px;
+    margin-bottom: 100px;
+    margin-top: 50px;
+}
+.card1 {
+    background: #222;
+    border: 1px solid #dd2476;
+    color: rgba(250, 250, 250, 0.8);
+    
+    margin-top: 100px;
+  }
+  
+  .btn {
+    border: 5px solid;
+    border-image-slice: 1;
+    background: var(--gradient)  ;
+    -webkit-background-clip: text  ;
+    -webkit-text-fill-color: transparent  ;
+    border-image-source:  var(--gradient)  ; 
+    text-decoration: none;
+    transition: all .4s ease;
+  }
+  
+  .btn:hover, .btn:focus {
+        background: var(--gradient)  ;
+    -webkit-background-clip: none  ;
+    -webkit-text-fill-color: #fff  ;
+    border: 5px solid #fff  ; 
+    box-shadow: #222 1px 0 10px;
+    text-decoration: underline;
+  }
+  
