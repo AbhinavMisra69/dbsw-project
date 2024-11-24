@@ -39,19 +39,19 @@
     <div id="cards-container" class="content">
       <!-- Profile Card -->
       <div class="card" id="profile-card">
-        <div class="icon"><i class="material-icons md-36">face</i></div>
+        <div class="icon1"><i class="material-icons md-36">face</i></div>
         <p class="title">create event</p>
         <p class="text">Click to add an event.</p>
       </div>
       <!-- Favourites Card -->
       <div class="card">
-        <div class="icon"><i class="material-icons md-36">favorite_border</i></div>
+        <div class="icon1"><i class="material-icons md-36">favorite_border</i></div>
         <p class="title">Delete event</p>
         <p class="text">delete all your unwanted events.</p>
       </div>
       <!-- Contacts Card -->
       <div class="card">
-        <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
+        <div class="icon1"><i class="material-icons md-36">alternate_email</i></div>
         <p class="title">Edit event</p>
         <p class="text">Add or change your contacts and links.</p>
       </div>
@@ -62,7 +62,14 @@
         <form>
           <label for="organizer-name">Organizer Name</label>
           <input type="text" id="organizer-name" placeholder="Enter organizer's name" required>
-          
+          <label for="event-name">
+            <span class="label-text">Event Name</span>
+            <input id="event-name" type="text" placeholder="Event Name" required />
+          </label>
+          <label for="venue">
+            <span class="label-text">venue</span>
+            <input id="venue-name" type="text" placeholder="venue" required />
+          </label>
           <label for="event-date">Event Date</label>
           <input type="date" id="event-date" required>
           
@@ -92,6 +99,14 @@
             <span class="label-text">Organizer Name</span>
             <input id="organizer-name" type="text" placeholder="Organizer's Name" required />
           </label>
+          <label for="event-name">
+            <span class="label-text">Event Name</span>
+            <input id="event-name" type="text" placeholder="Event Name" required />
+          </label>
+          <label for="venue">
+            <span class="label-text">venue</span>
+            <input id="venue-name" type="text" placeholder="venue" required />
+          </label>
           <label for="contact-email">
             <span class="label-text">Event date</span>
             <input id="contact-email" type="date" placeholder="example@email.com" required />
@@ -117,9 +132,7 @@
 
     <aside>
         <div class="sidebar-top">
-          <span class="shrink-btn">
-            <i class='bx bx-chevron-left'></i>
-          </span>
+          
           <img src="./img/logo.png" class="logo" alt="">
           <h3 class="hide">EVENTORIOUM</h3>
         </div>
@@ -200,6 +213,90 @@
 
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+      <div class="container mx-auto mt-4" id =  "userevents" >
+        
+        <div class="row" style="margin-left: 150px; margin-top: 50px; ">
+            
+          <div class="col-md-4" >
+            
+            <div class="card1" style="width: 18rem;">
+        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Event Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
+          <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
+             <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+         
+        </div>
+        </div>
+          </div>    
+             <div class="col-md-4">
+      <div class="card1" style="width: 18rem;">
+        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Event Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted"  >  Event date</h6>
+          <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
+          <a href="#" class="btn  mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          
+        </div>
+        </div>
+          </div>    
+                <div class="col-md-4">
+      <div class="card1" style="width: 18rem;">
+        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Event Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
+          <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
+          <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          
+        </div>
+        </div>
+        </div>
+          
+          <div class="col-md-4">
+            <div class="card1" style="width: 18rem;">
+        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Event Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
+          <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
+             <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          
+        </div>
+        </div>
+          </div>    
+             <div class="col-md-4">
+      <div class="card1" style="width: 18rem;">
+        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Event Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
+          <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
+          <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          
+        </div>
+        </div>
+          </div>    
+                <div class="col-md-4">
+      <div class="card1" style="width: 18rem;">
+        <img src="https://i.imgur.com/ZTkt4I5.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"> Event Name</h5>
+              <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
+          <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
+          <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          
+        </div>
+        </div>
+        </div>
+          
+        
+        <button type="button" id="delete-back-button">Back</button>
+      </div>
+        </div>
+
 
       <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -220,12 +317,20 @@
 });
        const contactsCard = document.querySelector('.card:nth-child(3)'); // Contacts card
 const contactsFormContainer = document.getElementById('contacts-form-container');
+const Edit = document.getElementById('userevents');
+const editbtn = document.getElementById("editbtn");
 const cardsContainer = document.querySelector('.content');
 const contactsBackButton = document.getElementById('contacts-back-button');
 
 // Show form and hide cards when Contacts card is clicked
 contactsCard.addEventListener('click', () => {
   cardsContainer.style.display = 'none';
+  Edit.style.display = 'block';
+  
+});
+
+editbtn.addEventListener('click', () => {
+  Edit.style.display = 'none';
   contactsFormContainer.style.display = 'block';
 });
 
@@ -234,6 +339,25 @@ contactsBackButton.addEventListener('click', () => {
   contactsFormContainer.style.display = 'none';
   cardsContainer.style.display = 'flex';
 });
+
+const deleteCard = document.querySelector('.card:nth-child(2)'); // delete events card
+const contactsFormContainer1 = document.getElementById('userevents');
+const cardsContainer1 = document.querySelector('.content');
+const contactsBackButton1 = document.getElementById('delete-back-button');
+
+// Show form and hide cards when Contacts card is clicked
+deleteCard.addEventListener('click', () => {
+  cardsContainer1.style.display = 'none';
+  contactsFormContainer1.style.display = 'block';
+});
+
+// Show cards and hide form when Back button is clicked
+contactsBackButton1.addEventListener('click', () => {
+  contactsFormContainer1.style.display = 'none';
+  cardsContainer1.style.display = 'flex';
+});
+
+
       </script>
 
     <script src="script.js"></script>
