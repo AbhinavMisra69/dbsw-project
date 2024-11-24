@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap"
+    rel="stylesheet"
+  />
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style3.css" />
+    <title>Event manage</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="navbar-menu" id="navbarMenu">
+        <button><a href="#">Home</a></button>
+        <button><a href="#">About</a></button>
+        <button><a href="#">Services</a></button>
+        <button><a href="#">Contact</a></button>
+        <div class="search">
+          <i class='bx bx-search'></i>
+          <input type="text" class="hide" placeholder="Quick Search ...">
+        </div>
+      </div>
+      <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+    </nav>
+  
+    <div id="cards-container" class="content">
+      <!-- Profile Card -->
+      <div class="card" id="profile-card">
+        <div class="icon"><i class="material-icons md-36">face</i></div>
+        <p class="title">create event</p>
+        <p class="text">Click to add an event.</p>
+      </div>
+      <!-- Favourites Card -->
+      <div class="card">
+        <div class="icon"><i class="material-icons md-36">favorite_border</i></div>
+        <p class="title">Delete event</p>
+        <p class="text">delete all your unwanted events.</p>
+      </div>
+      <!-- Contacts Card -->
+      <div class="card">
+        <div class="icon"><i class="material-icons md-36">alternate_email</i></div>
+        <p class="title">Edit event</p>
+        <p class="text">Add or change your contacts and links.</p>
+      </div>
+    </div>
+  
+    <div class="form-container" id="form-container">
+        <h2>Event Details</h2>
+        <form>
+          <label for="organizer-name">Organizer Name</label>
+          <input type="text" id="organizer-name" placeholder="Enter organizer's name" required>
+          
+          <label for="event-date">Event Date</label>
+          <input type="date" id="event-date" required>
+          
+          <label for="event-time">Event Time</label>
+          <input type="time" id="event-time" required>
+          
+          <label for="description">Event Description</label>
+          <textarea id="description" placeholder="Enter a brief description" rows="4" required></textarea>
+          
+          <label for="event-image">Event Image</label>
+          <input type="file" id="event-image" accept="image/*">
+    
+          <div class="form-buttons">
+            <button type="submit">Submit</button>
+            <button type="button" id="back-button">Back</button>
+          </div>
+        </form>
+      </div>
+    
+    <script src="script.js"></script>
+  
+
+    <div id="contacts-form-container" class="form-container vibrant">
+        <h2>Contact Details</h2>
+        <form id="contacts-form">
+          <label for="organizer-name">
+            <span class="label-text">Organizer Name</span>
+            <input id="organizer-name" type="text" placeholder="Organizer's Name" required />
+          </label>
+          <label for="contact-email">
+            <span class="label-text">Event date</span>
+            <input id="contact-email" type="date" placeholder="example@email.com" required />
+          </label>
+          <label for="contact-phone">
+            <span class="label-text">Event time</span>
+            <input id="contact-phone" type="time" placeholder="+123 456 7890" required />
+          </label>
+          <label for="description">
+            <span class="label-text">Description</span>
+            <textarea id="description" placeholder="Details about the contact..." required></textarea>
+          </label>
+          <label for="related-files">
+            <span class="label-text">Upload Related Files</span>
+            <input id="related-files" type="file" accept="image/*, .pdf, .docx" multiple />
+          </label>
+          <div class="form-buttons">
+            <button type="submit">Save Changes</button>
+            <button type="button" id="contacts-back-button">Back</button>
+          </div>
+        </form>
+      </div>
+
+    <aside>
+        <div class="sidebar-top">
+          <span class="shrink-btn">
+            <i class='bx bx-chevron-left'></i>
+          </span>
+          <img src="./img/logo.png" class="logo" alt="">
+          <h3 class="hide">EVENTORIOUM</h3>
+        </div>
+        
+       
+    
+        <div class="sidebar-links">
+          <ul>
+            <div class="active-tab"></div>
+            <li class="tooltip-element" data-tooltip="0">
+              <a href="#" class="active" data-active="0">
+                <div class="icon">
+                  <i class='bx bx-tachometer'></i>
+                  <i class='bx bxs-tachometer'></i>
+                </div>
+                <span class="link hide">Dashboard</span>
+              </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="1">
+              <a href="#" data-active="1">
+                <div class="icon">
+                  <i class='bx bx-folder'></i>
+                  <i class='bx bxs-folder'></i>
+                </div>
+                <span class="link hide">Projects</span>
+              </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="2">
+              <a href="#" data-active="2">
+                <div class="icon">
+                  <i class='bx bx-message-square-detail'></i>
+                  <i class='bx bxs-message-square-detail'></i>
+                </div>
+                <span class="link hide">Messages</span>
+              </a>
+            </li>
+            <li class="tooltip-element" data-tooltip="3">
+              <a href="#" data-active="3">
+                <div class="icon">
+                  <i class='bx bx-bar-chart-square'></i>
+                  <i class='bx bxs-bar-chart-square'></i>
+                </div>
+                <span class="link hide">Analytics</span>
+              </a>
+            </li>
+            <div class="tooltip">
+              <span class="show">Dashboard</span>
+              <span>Projects</span>
+              <span>Messages</span>
+              <span>Analytics</span>
+            </div>
+          </ul>
+    
+          
+    
+        <div class="sidebar-footer">
+          <a href="#" class="account tooltip-element" data-tooltip="0">
+            <i class='bx bx-user'></i>
+          </a>
+          <div class="admin-user tooltip-element" data-tooltip="1">
+            <div class="admin-profile hide">
+              <img src="./img/face-1.png" alt="">
+              <div class="admin-info">
+                <h3>John Doe</h3>
+                <h5>Admin</h5>
+              </div>
+            </div>
+            <a href="#" class="log-out">
+              <i class='bx bx-log-out'></i>
+            </a>
+          </div>
+          <div class="tooltip">
+            <span class="show">John Doe</span>
+            <span>Logout</span>
+          </div>
+        </div>
+      </aside>
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+  const profileCard = document.getElementById("profile-card");
+  const cardsContainer = document.getElementById("cards-container");
+  const formContainer = document.getElementById("form-container");
+  const backButton = document.getElementById("back-button");
+
+  profileCard.addEventListener("click", () => {
+    cardsContainer.style.display = "none";
+    formContainer.style.display = "block";
+  });
+
+  backButton.addEventListener("click", () => {
+    formContainer.style.display = "none";
+    cardsContainer.style.display = "flex";
+  });
+});
+       const contactsCard = document.querySelector('.card:nth-child(3)'); // Contacts card
+const contactsFormContainer = document.getElementById('contacts-form-container');
+const cardsContainer = document.querySelector('.content');
+const contactsBackButton = document.getElementById('contacts-back-button');
+
+// Show form and hide cards when Contacts card is clicked
+contactsCard.addEventListener('click', () => {
+  cardsContainer.style.display = 'none';
+  contactsFormContainer.style.display = 'block';
+});
+
+// Show cards and hide form when Back button is clicked
+contactsBackButton.addEventListener('click', () => {
+  contactsFormContainer.style.display = 'none';
+  cardsContainer.style.display = 'flex';
+});
+      </script>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
