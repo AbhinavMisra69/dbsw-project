@@ -70,7 +70,7 @@ window.addEventListener('DOMContentLoaded', () => {
     // Update big card content dynamically
     document.getElementById('bigcard-title').innerText = title;
     document.getElementById('bigcard-text').innerHTML = description;
-  
+  document.getElementById('recent').style.display='none';
     // Show big card and hide smaller cards
     bigCard.style.display = 'flex';
     grid.style.display = 'none';
@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', () => {
   function closeBigCard() {
     const bigCard = document.getElementById('bigcard');
     const grid = document.getElementById('grid');
-    
+    document.getElementById('recent').style.display='block';
     // Hide big card and show smaller cards
     bigCard.style.display = 'none';
     grid.style.display = 'flex';
