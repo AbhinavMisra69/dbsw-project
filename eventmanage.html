@@ -24,7 +24,9 @@
   <body>
     <nav class="navbar">
       <div class="navbar-menu" id="navbarMenu">
+        <a href="#"><img src="login-logo.png" style="max-width: 150px;"> </a>
         <button><a href="#">Home</a></button>
+        
         <button><a href="#">About</a></button>
         <button><a href="#">Services</a></button>
         <button><a href="#">Contact</a></button>
@@ -44,7 +46,7 @@
         <p class="text">Click to add an event.</p>
       </div>
       <!-- Favourites Card -->
-      <div class="card">
+      <div class="card" onclick="showcards()">
         <div class="icon1"><i class="material-icons md-36">favorite_border</i></div>
         <p class="title">Delete event</p>
         <p class="text">delete all your unwanted events.</p>
@@ -53,12 +55,14 @@
       <div class="card">
         <div class="icon1"><i class="material-icons md-36">alternate_email</i></div>
         <p class="title">Edit event</p>
-        <p class="text">Add or change your contacts and links.</p>
+        <p class="text">Add or change your event details.</p>
       </div>
     </div>
   
     <div class="form-container" id="form-container">
-        <h2>Event Details</h2>
+        <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        margin-left: 250px;
+        color: #ffffff;">Event Details</h2>
         <form>
           <label for="organizer-name">Organizer Name</label>
           <input type="text" id="organizer-name" placeholder="Enter organizer's name" required>
@@ -83,8 +87,8 @@
           <input type="file" id="event-image" accept="image/*">
     
           <div class="form-buttons">
-            <button type="submit">Submit</button>
-            <button type="button" id="back-button">Back</button>
+            <button class= "button1" type="submit">Submit</button>
+            <button class= "button1" type="button" id="back-button">Back</button>
           </div>
         </form>
       </div>
@@ -93,12 +97,9 @@
   
 
     <div id="contacts-form-container" class="form-container vibrant">
-        <h2>Contact Details</h2>
+        <h2>Edit event details</h2>
         <form id="contacts-form">
-          <label for="organizer-name">
-            <span class="label-text">Organizer Name</span>
-            <input id="organizer-name" type="text" placeholder="Organizer's Name" required />
-          </label>
+         
           <label for="event-name">
             <span class="label-text">Event Name</span>
             <input id="event-name" type="text" placeholder="Event Name" required />
@@ -125,7 +126,7 @@
           </label>
           <div class="form-buttons">
             <button type="submit">Save Changes</button>
-            <button type="button" id="contacts-back-button">Back</button>
+            <button  type="button" id="contacts-back-button">Back</button>
           </div>
         </form>
       </div>
@@ -134,7 +135,7 @@
         <div class="sidebar-top">
           
           <img src="./img/logo.png" class="logo" alt="">
-          <h3 class="hide">EVENTORIOUM</h3>
+          <h3 class="hide">EVENTORIUM</h3>
         </div>
         
        
@@ -152,32 +153,23 @@
               </a>
             </li>
             <li class="tooltip-element" data-tooltip="1">
-              <a href="#" data-active="1">
-                <div class="icon">
-                  <i class='bx bx-folder'></i>
-                  <i class='bx bxs-folder'></i>
-                </div>
-                <span class="link hide">Projects</span>
-              </a>
-            </li>
-            <li class="tooltip-element" data-tooltip="2">
-              <a href="#" data-active="2">
-                <div class="icon">
-                  <i class='bx bx-message-square-detail'></i>
-                  <i class='bx bxs-message-square-detail'></i>
-                </div>
-                <span class="link hide">Messages</span>
-              </a>
-            </li>
-            <li class="tooltip-element" data-tooltip="3">
-              <a href="#" data-active="3">
-                <div class="icon">
-                  <i class='bx bx-bar-chart-square'></i>
-                  <i class='bx bxs-bar-chart-square'></i>
-                </div>
-                <span class="link hide">Analytics</span>
-              </a>
-            </li>
+                <a href="#" data-active="1">
+                  <div class="icon">
+                    <i class='bx bx-folder'></i>
+                    <i class='bx bxs-folder'></i>
+                  </div>
+                  <span class="link hide">All events</span>
+                </a>
+              </li>
+              <li class="tooltip-element" data-tooltip="2">
+                <a href="#" data-active="2">
+                  <div class="icon">
+                    <i class='bx bx-bar-chart-square'></i>
+                    <i class='bx bxs-bar-chart-square'></i>
+                  </div>
+                  <span class="link hide">Manage events</span>
+                </a>
+              </li>
             <div class="tooltip">
               <span class="show">Dashboard</span>
               <span>Projects</span>
@@ -225,7 +217,8 @@
           <h5 class="card-title"> Event Name</h5>
               <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
           <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
-             <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+             <a href="#" class="btn mr-2" id="editbtn" onclick="showform()"><i class="fas fa-link"></i>  Edit</a>
+             <a href="#" class="btn  mr-2" id="dbtn" onclick="deleteCard()"><i class="fas fa-link"></i>  Delete</a>
          
         </div>
         </div>
@@ -237,7 +230,8 @@
           <h5 class="card-title"> Event Name</h5>
               <h6 class="card-subtitle mb-2 text-muted"  >  Event date</h6>
           <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
-          <a href="#" class="btn  mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn  mr-2" id="editbtn" onclick="showform()"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn  mr-2" id="dbtn" onclick="deleteCard()"><i class="fas fa-link"></i>  Delete</a>
           
         </div>
         </div>
@@ -249,7 +243,8 @@
           <h5 class="card-title"> Event Name</h5>
               <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
           <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
-          <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn mr-2" id="editbtn" onclick="showform()"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn  mr-2" id="dbtn" onclick="deleteCard()"><i class="fas fa-link"></i>  Delete</a>
           
         </div>
         </div>
@@ -262,7 +257,8 @@
           <h5 class="card-title"> Event Name</h5>
               <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
           <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
-             <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+             <a href="#" class="btn mr-2" id="editbtn" onclick="showform()"><i class="fas fa-link"></i>  Edit</a>
+             <a href="#" class="btn  mr-2" id="dbtn" onclick="deleteCard()"><i class="fas fa-link"></i>  Delete </a>
           
         </div>
         </div>
@@ -274,7 +270,8 @@
           <h5 class="card-title"> Event Name</h5>
               <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
           <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
-          <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn mr-2" id="editbtn" onclick="showform()"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn  mr-2" id="dbtn" onclick="deleteCard()"><i class="fas fa-link"></i>  Delete </a>
           
         </div>
         </div>
@@ -286,14 +283,15 @@
           <h5 class="card-title"> Event Name</h5>
               <h6 class="card-subtitle mb-2 text-muted">  Event date</h6>
           <p class="card-text">Some quick example text to build on the  Event Name and make up the bulk of the card's content.</p>
-          <a href="#" class="btn mr-2" id="editbtn"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn mr-2" id="editbtn" onclick="showform()"><i class="fas fa-link"></i>  Edit</a>
+          <a href="#" class="btn  mr-2" id="dbtn" onclick="deleteCard()"><i class="fas fa-link"></i>  Delete </a>
           
         </div>
         </div>
         </div>
           
         
-        <button type="button" id="delete-back-button">Back</button>
+        <button class = "button1" type="button" id="delete-back-button">Back</button>
       </div>
         </div>
 
@@ -329,15 +327,16 @@ contactsCard.addEventListener('click', () => {
   
 });
 
-editbtn.addEventListener('click', () => {
+function showform() {
   Edit.style.display = 'none';
   contactsFormContainer.style.display = 'block';
-});
+};
 
 // Show cards and hide form when Back button is clicked
 contactsBackButton.addEventListener('click', () => {
   contactsFormContainer.style.display = 'none';
   cardsContainer.style.display = 'flex';
+  
 });
 
 const deleteCard = document.querySelector('.card:nth-child(2)'); // delete events card
@@ -346,15 +345,17 @@ const cardsContainer1 = document.querySelector('.content');
 const contactsBackButton1 = document.getElementById('delete-back-button');
 
 // Show form and hide cards when Contacts card is clicked
-deleteCard.addEventListener('click', () => {
+function showcards(){
+    
   cardsContainer1.style.display = 'none';
   contactsFormContainer1.style.display = 'block';
-});
+};
 
 // Show cards and hide form when Back button is clicked
 contactsBackButton1.addEventListener('click', () => {
   contactsFormContainer1.style.display = 'none';
   cardsContainer1.style.display = 'flex';
+  
 });
 
 
