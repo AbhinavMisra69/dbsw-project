@@ -177,21 +177,21 @@
     background: white;
     border-radius: 10px;
     width: 50%;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    animation: fadeIn 0.8s ease;
-  }
-  
-  .form-container h2 {
     
-    text-align: center;
-    color: #c72727;
-  }
+    animation: fadeIn 0.8s ease;
+    background: linear-gradient(#da5fa9a1,#bd201dbb);
+	box-shadow:0 12px 15px 0 rgba(164, 41, 41, 0.24),0 17px 50px 0 rgba(226, 23, 23, 0.19);
+}
+  
+  
+  
   
   form label {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     display: block;
     margin-top: 10px;
     font-size: 14px;
-    color: #555;
+    color: #ffffff;
   }
   
   form input, form textarea {
@@ -199,12 +199,14 @@
     margin-top: 5px;
     padding: 10px;
     border: 1px solid #ddd;
+    color: whitesmoke;
+    background: rgba(48, 26, 26, 0.5);
     border-radius: 5px;
     outline: none;
   }
   
   form input:focus, form textarea:focus {
-    border-color: #4facfe;
+    border-color: #ef2c2c;
   }
   
   .form-buttons {
@@ -213,17 +215,20 @@
     margin-top: 15px;
   }
   
-  button {
-    background-color: #4facfe;
+  .button1 {
+    background: linear-gradient(#e925534f,#a5176f);
     color: white;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border: 1px dashed whitesmoke;
     transition: background-color 0.3s;
   }
   
-  button:hover {
+  .button1:hover {
     background-color: #007aff;
   }
   
@@ -691,7 +696,7 @@
 
  .vibrant {
     display: none;
-    background: linear-gradient(135deg, #ff7eb3, #ff758c, #feae96);
+    background: linear-gradient(135deg, #ff7e91, #f0183c, #feae96);
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
@@ -738,6 +743,7 @@
   }
   
   .vibrant button {
+    margin-top: 40px;
     padding: 10px 20px;
     border: none;
     border-radius: 6px;
@@ -746,7 +752,7 @@
   }
   
   .vibrant button[type="submit"] {
-    background-color: #32cd32;
+    background-color: #df2c53;
     color: #fff;
     animation: glow 1s infinite alternate;
   }
