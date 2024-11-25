@@ -66,11 +66,11 @@ window.addEventListener('DOMContentLoaded', () => {
   function showBigCard(title, description, btnText1, btnText2) {
     const bigCard = document.getElementById('bigcard');
     const grid = document.getElementById('grid');
-    
+    document.getElementById('recent').style.display='none';
     // Update big card content dynamically
     document.getElementById('bigcard-title').innerText = title;
     document.getElementById('bigcard-text').innerHTML = description;
-  document.getElementById('recent').style.display='none';
+  
     // Show big card and hide smaller cards
     bigCard.style.display = 'flex';
     grid.style.display = 'none';
