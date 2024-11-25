@@ -57,42 +57,8 @@ const months = [
 //   },
 // ];
 
-const wrapper = document.querySelector(".wrapper"),
-  carousel = document.querySelector(".carousel"),
-  images = document.querySelectorAll("img"),
-  buttons = document.querySelectorAll(".button");
-let imageIndex = 1,
-  intervalId;
-// Define function to start automatic image slider
-const autoSlide = () => {
-  // Start the slideshow by calling slideImage() every 2 seconds
-  intervalId = setInterval(() => slideImage(++imageIndex), 4000);
-};
-// Call autoSlide function on page load
-autoSlide();
-// A function that updates the carousel display to show the specified image
-const slideImage = () => {
-  // Calculate the updated image index
-  imageIndex = imageIndex === images.length ? 0 : imageIndex < 0 ? images.length - 1 : imageIndex;
-  // Update the carousel display to show the specified image
-  carousel.style.transform = `translate(-${imageIndex * 100}%)`;
-};
-// A function that updates the carousel display to show the next or previous image
-const updateClick = (e) => {
-  // Stop the automatic slideshow
-  clearInterval(intervalId);
-  // Calculate the updated image index based on the button clicked
-  imageIndex += e.target.id === "next" ? 1 : -1;
-  slideImage(imageIndex);
-  // Restart the automatic slideshow
-  autoSlide();
-};
-// Add event listeners to the navigation buttons
-buttons.forEach((button) => button.addEventListener("click", updateClick));
-// Add mouseover event listener to wrapper element to stop auto sliding
-wrapper.addEventListener("mouseover", () => clearInterval(intervalId));
-// Add mouseleave event listener to wrapper element to start auto sliding again
-wrapper.addEventListener("mouseleave", autoSlide);
+
+
         
 const eventsArr = [];
 getEvents();
@@ -556,3 +522,49 @@ sidebar_links.forEach((link) => link.addEventListener("click", changeLink));
 tooltip_elements.forEach((elem) => {
   elem.addEventListener("mouseover", showTooltip);
 });*/
+
+
+const Card = document.getElementsByID('card');
+const Container2 = document.getElementsByID('bigcard');
+
+
+
+Card.addEventListener('click', () => {
+  Card.style.display = 'none';
+  Container2.style.display = 'flex';
+
+});
+
+// Show the big card with dynamic content
+function showBigCard(title, text, btn1Text, btn2Text) {
+  // Hide the smaller cards
+  document.getElementById("card-grid1").style.display = "none";
+  document.getElementById("card-grid2").style.display = "none";
+  document.getElementById("current").style.display = "none";
+  document.getElementById("recent").style.display = "none";
+  document.getElementById("calender").style.display = "none";
+  document.getElementById("carouselExampleIndicators").style.display = "none";
+  // Populate the big card content
+  document.getElementById("bigcard-title").textContent = title;
+  document.getElementById("bigcard-text").innerHTML = text;
+  document.getElementById("bigcard-btn1").textContent = btn1Text;
+  document.getElementById("bigcard-btn2").textContent = btn2Text;
+  
+  // Show the big card
+  document.getElementById("bigcard").style.display = "block";
+}
+
+// Close the big card and return to smaller cards
+function closeBigCard() {
+  // Hide the big card
+  document.getElementById("bigcard").style.display = "none";
+  document.getElementById("current").style.display = "block";
+  document.getElementById("recent").style.display = "block";
+  document.getElementById("carouselExampleIndicators").style.display = "block";
+  document.getElementById("calender").style.display = "flex";
+  // Show the smaller cards
+  document.getElementById("card-grid1").style.display = "flex";
+  document.getElementById("card-grid2").style.display = "flex";
+}
+
+
